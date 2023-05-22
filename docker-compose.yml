@@ -1,0 +1,65 @@
+version: '3.4'
+
+networks:
+  backendapi:
+
+
+services:
+  angular-app:
+    build:
+      context: ./helloworld-angular
+      dockerfile: Dockerfile
+    networks:
+      - backendapi
+    ports:
+      - 9090:80
+  gateway:
+    build:
+      context: .
+      dockerfile: ./Gateway/Dockerfile
+    ports:
+      - "8080:80"
+      - "8081:443"
+    networks:
+      - backendapi
+    environment:
+      ASPNETCORE_URLS: "https://+;http://+"
+      ASPNETCORE_HTTPS_PORT: "8081"
+      ASPNETCORE_ENVIRONMENT: "Development"
+    volumes:
+      - ${APPDATA}\microsoft\UserSecrets\:/root/.microsoft/usersecrets
+      - ${USERPROFILE}\.aspnet\https:/root/.aspnet/https/
+    depends_on:
+      - service1
+  service1:
+    build:
+      context: .
+      dockerfile: ./Service1/Dockerfile
+    ports:
+      - "8082:80"
+      - "8083:443"
+    networks:
+      - backendapi
+    environment:
+      ASPNETCORE_URLS: "https://+;http://+"
+      ASPNETCORE_HTTPS_PORT: "8083"
+      ASPNETCORE_ENVIRONMENT: "Development"
+    volumes:
+      - ${APPDATA}\microsoft\UserSecrets\:/root/.microsoft/usersecrets
+      - ${USERPROFILE}\.aspnet\https:/root/.aspnet/https/
+  service2:
+    build:
+      context: .
+      dockerfile: ./Service2/Dockerfile
+    ports:
+      - "8084:80"
+      - "8085:443"
+    networks:
+      - backendapi
+    environment:
+      ASPNETCORE_URLS: "https://+;http://+"
+      ASPNETCORE_HTTPS_PORT: "8085"
+      ASPNETCORE_ENVIRONMENT: "Development"
+    volumes:
+      - ${APPDATA}\microsoft\UserSecrets\:/root/.microsoft/usersecrets
+      - ${USERPROFILE}\.aspnet\https:/root/.aspnet/https/
