@@ -49,6 +49,10 @@ Import frontend.pfx into your certificate store (Windows):
 
 docker-compose up --build
 
+## Test
+
+- Open a browser and navigate to <https://localhost:9090>
+
 ## Kubernetes
 
 The deployment files have been created with stub values. I don't know enough about Kubernetes to make it work yet. Stay tuned!
