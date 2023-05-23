@@ -3,16 +3,39 @@
 Dockerized .NET backend and Angular frontend. This just dumps everything into
 one container for now.
 
-dotnet dev-certs https -ep $env:USERPROFILE\.aspnet\https\Gateway.pfx -p pa55w0rd!
+The following assumptions are made:
 
-dotnet dev-certs https -ep $env:USERPROFILE\.aspnet\https\Service1.pfx -p pa55w0rd!
+- You have Docker Desktop installed
+- You have Visual Studio 2022 installed
 
-dotnet dev-certs https -ep $env:USERPROFILE\.aspnet\https\Service2.pfx -p pa55w0rd!
+## Create the following self signed certificates for each of the services
 
-dotnet dev-certs https --trust
+`dotnet dev-certs https -ep $env:USERPROFILE\.aspnet\https\Gateway.pfx -p pa55w0rd!`
 
-dotnet user-secrets set "Kestrel:Certificates:Development:Password" "pa55w0rd!"
+`dotnet dev-certs https -ep $env:USERPROFILE\.aspnet\https\Service1.pfx -p pa55w0rd!`
+
+`dotnet dev-certs https -ep $env:USERPROFILE\.aspnet\https\Service2.pfx -p pa55w0rd!`
+
+## Trust the certificates
+
+`dotnet dev-certs https --trust`
+
+## Switch to each of the services and run the following
+
+`dotnet user-secrets set "Kestrel:Certificates:Development:Password" "pa55w0rd!"`
+
+## Build and run the docker containers
 
 docker-compose up --build
 
-Helpful video: https://www.youtube.com/watch?v=UsoH5cqE1OA
+## Helpful Resources
+
+- https://www.youtube.com/watch?v=UsoH5cqE1OA
+
+## Author
+
+- Frank Hale &lt;frankhaledevelops@gmail.com&gt;
+
+## Date
+
+22 May 2023
