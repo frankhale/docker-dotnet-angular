@@ -5,14 +5,6 @@ networks:
 
 
 services:
-  angular-app:
-    build:
-      context: ./helloworld-angular
-      dockerfile: Dockerfile
-    networks:
-      - backendapi
-    ports:
-      - 9090:80
   gateway:
     build:
       context: .

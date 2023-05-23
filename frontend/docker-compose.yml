@@ -1,0 +1,9 @@
+version: '3.4'
+
+services:
+  angular-app:
+    build:
+      context: ./helloworld-angular
+      dockerfile: Dockerfile
+    ports:
+      - 9090:80

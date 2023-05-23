@@ -8,7 +8,7 @@ The following assumptions are made:
 - You have Docker Desktop installed
 - You have Visual Studio 2022 installed
 
-## Create the following self signed certificates for each of the services
+## Create the following self signed certificates for each of the services located in the backend folder
 
 `dotnet dev-certs https -ep $env:USERPROFILE\.aspnet\https\Gateway.pfx -p pa55w0rd!`
 
@@ -20,11 +20,11 @@ The following assumptions are made:
 
 `dotnet dev-certs https --trust`
 
-## Switch to each of the services and run the following
+## Switch to each of the services in the backend folder and run the following
 
 `dotnet user-secrets set "Kestrel:Certificates:Development:Password" "pa55w0rd!"`
 
-## Build and run the docker containers
+## Build and run (do this in the frontend and backend folders)
 
 docker-compose up --build
 
@@ -34,7 +34,7 @@ docker-compose up --build
 
 ## Author
 
-- Frank Hale &lt;frankhaledevelops@gmail.com&gt;
+Frank Hale &lt;<frankhaledevelops@gmail.com>&gt;
 
 ## Date
 
