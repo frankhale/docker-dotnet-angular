@@ -1,7 +1,11 @@
 # docker-dotnet-angular
 
-Dockerized .NET backend and Angular frontend. This just dumps everything into
-one container for now.
+Dockerized .NET backend and Angular frontend.
+
+Two containers:
+
+- Frontend (Angular)
+- Backend (Gateway, Service1 and Service2)
 
 The following assumptions are made:
 
