@@ -28,6 +28,24 @@ The following assumptions are made:
 
 `dotnet user-secrets set "Kestrel:Certificates:Development:Password" "pa55w0rd!"`
 
+## Create the self signed certificate for the frontend located in the frontend folder
+
+`dotnet dev-certs https -ep frontend.pfx -p pa55w0rd!`
+
+`openssl pkcs12 -in ./frontend.pfx -clcerts -nokeys -out frontend.crt`
+
+`openssl pkcs12 -in ./frontend.pfx -nocerts -nodes -out frontend.key`
+
+
+Import frontend.pfx into your certificate store (Windows):
+
+- Double-click on the self-signed certificate file (with the .crt extension) to open the certificate details.
+- Click on the "Install Certificate" button.
+- Select "Local Machine" and click "Next."
+- Choose "Place all certificates in the following store" and click "Browse."
+- Select "Trusted Root Certification Authorities" and click "OK."
+- Click "Next" and then "Finish" to complete the installation.
+
 ## Build and run (do this in the frontend and backend folders)
 
 docker-compose up --build

@@ -6,4 +6,4 @@ services:
       context: ./helloworld-angular
       dockerfile: Dockerfile
     ports:
-      - 9090:80
+      - 9090:443
