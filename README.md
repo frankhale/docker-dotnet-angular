@@ -46,7 +46,7 @@ Frontend
 
 ## Helpful Resources
 
-- https://www.youtube.com/watch?v=UsoH5cqE1OA
+- <https://www.youtube.com/watch?v=UsoH5cqE1OA>
 
 ## Author
 
