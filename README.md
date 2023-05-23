@@ -36,7 +36,6 @@ The following assumptions are made:
 
 `openssl pkcs12 -in ./frontend.pfx -nocerts -nodes -out frontend.key`
 
-
 Import frontend.pfx into your certificate store (Windows):
 
 - Double-click on the self-signed certificate file (with the .crt extension) to open the certificate details.
