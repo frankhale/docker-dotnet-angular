@@ -38,6 +38,12 @@ Frontend
 
 ![Screenshot](./screenshots/frontend.png)
 
+## TODO
+
+- localhost is hardcoded in Angular service which calls the backend
+- The frontend is not served using HTTPS
+- The Gateway, Service1 and Service2 should be in their own containers
+
 ## Helpful Resources
 
 - https://www.youtube.com/watch?v=UsoH5cqE1OA
