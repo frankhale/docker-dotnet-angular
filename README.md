@@ -28,6 +28,16 @@ The following assumptions are made:
 
 docker-compose up --build
 
+## Screenshots
+
+Docker Desktop
+
+![Screenshot](./screenshots/docker.png)
+
+Frontend
+
+![Screenshot](./screenshots/frontend.png)
+
 ## Helpful Resources
 
 - https://www.youtube.com/watch?v=UsoH5cqE1OA
