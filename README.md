@@ -69,7 +69,6 @@ Frontend
 
 ## TODO
 
-- localhost is hardcoded in Angular service which calls the backend
 - The Gateway, Service1 and Service2 should be in their own containers
 
 ## Helpful Resources
