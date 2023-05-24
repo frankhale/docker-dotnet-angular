@@ -70,7 +70,6 @@ Frontend
 ## TODO
 
 - localhost is hardcoded in Angular service which calls the backend
-- The frontend is not served using HTTPS
 - The Gateway, Service1 and Service2 should be in their own containers
 
 ## Helpful Resources
@@ -83,4 +82,4 @@ Frank Hale &lt;<frankhaledevelops@gmail.com>&gt;
 
 ## Date
 
-23 May 2023
+24 May 2023

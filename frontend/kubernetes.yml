@@ -3,18 +3,17 @@ kind: Deployment
 metadata:
   name: frontend
 spec:
+  replicas: 1
   selector:
-	matchLabels:
-  	app: frontend
+    matchLabels:
+      app: frontend
   template:
-	metadata:
-  	labels:
-    	app: frontend
-	spec:
-  	containers:
-  	- name: frontend
-    	image: frontend
-    	resources:
-      	limits:
-        	memory: "128Mi"
-        	cpu: "500m"
+    metadata:
+      labels:
+        app: frontend
+    spec:
+      containers:
+        - name: frontend
+          image: frontend-angular-app
+          ports:
+            - containerPort: 9090

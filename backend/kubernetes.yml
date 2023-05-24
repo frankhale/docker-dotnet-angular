@@ -12,9 +12,15 @@ spec:
     	app: backend
 	spec:
   	containers:
-  	- name: backend
-    	image: backend
-    	resources:
-      	limits:
-        	memory: "128Mi"
-        	cpu: "500m"
+			- name: backend-gateway
+				image: backend-gateway
+				ports:
+					containerPort: 8081
+			- name: backend-service1
+				image: backend-service1
+				ports:
+					containerPort: 8083
+			- name: backend-service2
+				image: backend-service2
+				ports:
+					containerPort: 8085
